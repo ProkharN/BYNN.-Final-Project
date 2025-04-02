@@ -257,7 +257,7 @@ def main():
 
 
     print("Building vocabulary...")
-    vocab = build_vocab(train_data, min_freq=2)
+    vocab = build_vocab(train_data, min_freq=5)
     vocab_size = len(vocab)
     print("Vocabulary size:", vocab_size)
 
@@ -339,8 +339,8 @@ def main():
     print(summary_df)
     
     # Save results to CSV
-    summary_df.to_csv("model_performance_summary.csv", index=False)
-    print("Performance summary saved to model_performance_summary.csv")
+    summary_df.to_csv("model_performance_summary_min_freq_5.csv", index=False)
+    print("Performance summary saved to model_performance_summary_min_freq_5.csv")
 
 if __name__ == "__main__":
     main()
