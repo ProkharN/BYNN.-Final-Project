@@ -252,6 +252,10 @@ def main():
     train_data = load_imdb_data(split="train")
     test_data = load_imdb_data(split="test")
 
+    train_data = random.Random(SEED).sample(train_data, int(0.05 * len(train_data)))
+    test_data = random.Random(SEED).sample(test_data, int(0.05 * len(test_data)))
+
+
     print("Building vocabulary...")
     vocab = build_vocab(train_data, min_freq=2)
     vocab_size = len(vocab)
